@@ -12,12 +12,12 @@ st.sidebar.title("Menu")
 
 selected_tab = st.sidebar.radio(
     "Choose a tab",
-    ["Home", "Hiragana", "Katakana", "Kanji", "JLPT N5 Grammar"]
+    ["Intro", "Hiragana", "Katakana", "Kanji", "JLPT N5 Grammar"]
 )
 
 # Display content based on selection
-if selected_tab == "Home":
-    st.header("Home")
+if selected_tab == "Intro":
+    st.header("Intro")
     intro.get_content()
 
 elif selected_tab == "Hiragana":
