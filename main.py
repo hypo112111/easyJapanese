@@ -5,6 +5,8 @@ import Hiragana
 import Katakana
 import jlptn5grammar
 import jlptn4grammar
+import jlptn5kanji
+import jlptn4kanji
 
 def n5next_pressed():
 
@@ -45,7 +47,9 @@ selected_tab = st.sidebar.radio(
         "Hiragana",
         "Katakana",
         "Kanji",
+        "JLPT N5 Kanji",
         "JLPT N5 Grammar",
+        "JLPT N4 Kanji",
         "JLPT N4 Grammar"]
 )
 
@@ -467,3 +471,296 @@ elif selected_tab == "JLPT N4 Grammar":
                 unsafe_allow_html=True
             )
             jlptn4grammar.lesson50()
+
+elif selected_tab == "JLPT N5 Kanji":
+
+    st.markdown("""
+        <style>
+        button {
+            height: auto;
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+            font-size: 24px !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    prev, title, next = st.columns([0.4, 2.2, 0.4])
+
+    n5lessons = ["Lesson 1",
+                 "Lesson 2",
+                 "Lesson 3",
+                 "Lesson 4",
+                 "Lesson 5",
+                 "Lesson 6",
+                 "Lesson 7",
+                 "Lesson 8",
+                 "Lesson 9",
+                 "Lesson 10",
+                 "Lesson 11"]
+
+    n5KanjiLesson = st.sidebar.selectbox(
+        "Lesson",
+        n5lessons,
+        key="lesson_select"
+    )
+
+    with prev:
+        prev_pressed = st.button("←",
+                                 on_click=n5prev_pressed)
+
+    with next:
+        next_pressed = st.button("→",
+                                 on_click=n5next_pressed)
+
+    with title:
+        st.markdown(
+            "<h1 style='text-align: center;'>JLPT N5 Kanji</h1>",
+            unsafe_allow_html=True
+        )
+
+        match n5KanjiLesson:
+            case "Lesson 1":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 1</h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson1()
+            case "Lesson 2":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 2</h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson2()
+            case "Lesson 3":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 3</h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson3()
+            case "Lesson 4":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 4</h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson4()
+            case "Lesson 5":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 5</h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson5()
+            case "Lesson 6":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 6</h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson6()
+            case "Lesson 7":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 7</h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson7()
+            case "Lesson 8":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 8</h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson8()
+            case "Lesson 9":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 9</h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson9()
+            case "Lesson 10":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 10</h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson10()
+            case "Lesson 11":
+                st.markdown(
+                    "<h1 style='text-align: center;'>Lesson 11<h1>",
+                    unsafe_allow_html=True
+                )
+                jlptn5kanji.lesson11()
+
+elif selected_tab == "JLPT N4 Kanji":
+
+    st.markdown("""
+        <style>
+        button {
+            height: auto;
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+            font-size: 24px !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    prev, title, next = st.columns([0.4, 2.2, 0.4])
+
+    n4lessons = ["Lesson 1",
+         "Lesson 2",
+         "Lesson 3",
+         "Lesson 4",
+         "Lesson 5",
+         "Lesson 6",
+         "Lesson 7",
+         "Lesson 8",
+         "Lesson 9",
+         "Lesson 10",
+         "Lesson 11",
+         "Lesson 12",
+         "Lesson 13",
+         "Lesson 14",
+         "Lesson 15",
+         "Lesson 16",
+         "Lesson 17",
+         "Lesson 18",
+         "Lesson 19",
+         "Lesson 20"]
+
+    n4KanjiLesson = st.sidebar.selectbox(
+        "Lesson",
+        n4lessons,
+        key="lesson_select"
+    )
+
+    with prev:
+        prev_pressed = st.button("←",
+                                 on_click=n4prev_pressed)
+
+    with next:
+        next_pressed = st.button("→",
+                                 on_click=n4next_pressed)
+
+    with title:
+        st.markdown(
+            "<h1 style='text-align: center;'>JLPT N4 Kanji</h1>",
+            unsafe_allow_html=True
+        )
+
+    match n4KanjiLesson:
+        case "Lesson 1":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 1</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson1()
+        case "Lesson 2":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 2</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson2()
+        case "Lesson 3":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 3</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson3()
+        case "Lesson 4":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 4</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson4()
+        case "Lesson 5":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 5</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson5()
+        case "Lesson 6":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 6</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson6()
+        case "Lesson 7":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 7</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson7()
+        case "Lesson 8":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 8</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson8()
+        case "Lesson 9":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 9</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson9()
+        case "Lesson 10":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 10</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson10()
+        case "Lesson 11":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 11</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson11()
+        case "Lesson 12":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 12</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson12()
+        case "Lesson 13":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 13</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson13()
+        case "Lesson 14":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 14</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson14()
+        case "Lesson 15":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 15</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson15()
+        case "Lesson 16":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 16</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson16()
+        case "Lesson 17":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 17</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson17()
+        case "Lesson 18":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 18</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson18()
+        case "Lesson 19":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 19</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson19()
+        case "Lesson 20":
+            st.markdown(
+                "<h1 style='text-align: center;'>Lesson 20</h1>",
+                unsafe_allow_html=True
+            )
+            jlptn4kanji.lesson20()
